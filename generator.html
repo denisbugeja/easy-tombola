@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Tombola Generator</title>
+    <link rel="stylesheet" href="./style.min.css">
+</head>
+<body>
+    <div id="generator">
+    </div>
+    <div id="ticketlist"></div>
+    <div id="sample">
+        <!-- sample ticket beginning -->
+        <div class="ticket">
+            <div class="left">
+                <div class="number text-right">{{number}}</div>
+                <div class="labelStudent text-left bold">Nom & prénom de l'élève:</div>
+                <div class="student dotted-bottom"></div>
+                <div class="labelGrade text-left bold">Classe:</div>
+                <div class="grade dotted-bottom"></div>                
+                <div class="organization bold">{{organisation}}</div>
+            </div>
+            <div class="right">
+                <div class="number text-right">{{number}}</div>
+                <div class="title bold">{{title}}</div>
+
+                <div class="winprice">{{winprice}}</div>
+                <div class="winprice-subtitle">{{winpricesubtitle}}</div>
+                <div class="rule text-left">{{rule}}</div>
+                <div class="price">{{price}}</div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- sample ticket end -->
+    </div>
+    <script src="./generator.js"></script>
+</body>

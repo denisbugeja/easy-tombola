@@ -1,0 +1,296 @@
+$ticketsPerPage: 5;
+$pageWidth: 21cm;
+$pageHeight: 29.7cm;
+$innerPadding: 0.75cm;
+$leftInputHeight: 0.75cm;
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.clr,
+.clearfix,
+.break {
+    clear: both;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.4cm;
+
+    @media print{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.bold,
+.strong {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.dotted-bottom {
+    border-bottom: 1px dotted black;
+}
+
+#ticketlist {
+    @media screen {
+        width: $pageWidth;
+        height: $pageHeight;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    @media print {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#generator {
+    @media screen {
+        display: block;
+    }
+
+    @media print {
+        display: none;
+    }
+}
+
+.ticket {
+    @media print {
+        width: 100vw;
+        height: (100vh / $ticketsPerPage);
+    }
+
+    @media screen {
+        width: $pageWidth;
+        height: ($pageHeight / $ticketsPerPage);
+    }
+
+    border-bottom: 1px dotted grey;
+
+    .left,
+    .right {
+        float: left;
+        height: 100%;
+        position: relative;
+        padding: 0.75cm
+    }
+
+    .number {
+        font-size: 1.7em;
+        line-height: 100%;
+        position: absolute;
+        right: $innerPadding;
+        top: $innerPadding;
+    }
+
+    .left {
+        width: 33.33%;
+
+        .labelStudent,
+        .student,
+        .labelGrade,
+        .grade,
+        .organization {
+            position: absolute;
+            left: $innerPadding;
+            right: $innerPadding;
+            line-height: 100%;
+        }
+
+        .labelGrade,
+        .labelStudent {
+            font-size: 1em;
+        }
+
+        .number {
+            top: 0.5cm;
+        }
+
+        .labelStudent {
+            top: 1.5cm;
+        }
+
+        .student {
+            top: 2cm;
+            height: $leftInputHeight;
+        }
+
+        .labelGrade {
+            top: 3.25cm;
+        }
+
+        .grade {
+            top: 3.75cm;
+            height: $leftInputHeight;
+        }
+
+        .organization {
+            top: 5cm;
+        }
+    }
+
+    .right {
+        width: 66.66%;
+        border-left: 1px dashed grey;
+        position: relative;
+
+        .prix {
+            font-size: 6em;
+            position: absolute;
+            right: 15px;
+            bottom: 100px;
+            line-height: 100%;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+
+            span {
+                display: inline-block;
+                margin-left: 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        .ecole {
+            position: absolute;
+            left: 70px;
+            left: 50px;
+            bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .date {
+            position: absolute;
+            left: 40%;
+            top: 60%;
+            font-size: 1.6em;
+        }
+
+        .titre {
+            margin: 0;
+        }
+
+
+        .titre {
+            position: absolute;
+            font-size: 2.7em;
+            top: 0.5cm;
+            left: 0.5cm;
+        }
+
+        .offert {
+            position: absolute;
+            bottom: 43px;
+            font-weight: bold;
+            font-size: 1.9em;
+            text-align: center;
+        }
+
+        &.bonus {
+            background-position: 5% 5%;
+            background-size: auto 60%;
+
+            .ecole {
+                text-align: center;
+            }
+
+            .titre {
+                top: 47%;
+                left: 29%;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                background-image: url('bonus.png');
+                background-size: 100% 100%;
+                background-position: left top;
+                width: 126px;
+                height: 69px;
+                position: absolute;
+                left: 63%;
+                top: 32%;
+            }
+        }
+
+        .winprice {
+            font-weight: 700;
+            position: absolute;
+            top: 3.1cm;
+            font-size: 2.8em;
+        }
+
+        .winprice-subtitle {
+            font-style: italic;
+            position: absolute;
+            top: 4.05cm;
+        }
+
+        .winprice,
+        .winprice-subtitle {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    $pattern: $ticketsPerPage + 'n';
+    &:nth-child($pattern) {
+        border-bottom: none;
+
+        @media print {
+            page-break-after: always;
+        }
+    }
+}
+
+.pointillets {
+    display: block;
+    border: 1px dotted black;
+}
+
+.fornom {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 10.75cm;
+}
+
+.forclasse {
+    display: block;
+    width: 40%;
+    position: absolute;
+    bottom: 0.75cm;
+}
+
+#sample {
+    display: none;
+}
