@@ -1,6 +1,6 @@
 # Générateur de tickets de tombola
 
-Ce module propose une numérotation adaptée à un découpage rapide des carnets avec un massicot.
+Ce module permet de créer facilement des carnets de tickets de tombola et génère une numérotation adaptée à un découpage rapide des carnets avec un massicot.
 
 ## Explications avec un cas pratique
 
