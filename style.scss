@@ -26,6 +26,11 @@ $leftInputHeight: 0.75cm;
     width: 50%;
 }
 
+.full{
+    width: 100%;
+    float: none;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -103,6 +108,20 @@ body {
 #generator{
     width: $pageWidth;
     margin: 0 auto;
+    label{
+        font-weight: bold;
+        display: block;
+        padding: 5px 0;
+    }
+
+    input[type=number],
+    input[type=text]{
+        width: 100%;
+    }
+    .full,
+    .mid{
+        padding: 15px;
+    }    
 }
 
 #preview{
@@ -185,6 +204,7 @@ body {
 
         .organization {
             top: 5cm;
+            font-size: 0.8em;
         }
     }
 
@@ -204,7 +224,7 @@ body {
         .title {
             position: absolute;
             top: 0.5cm;
-            right: 2.85cm;
+            right: 2.25cm;
             left: $innerPadding;
             font-size: 1.5em;
         }

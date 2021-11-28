@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector('button#print').addEventListener('click', function () {
         document.querySelector('#ticketlist').innerHTML = generateAllTickets();
-        window.print();
+        setTimeout(function () {
+            window.print();
+        }, 2000);        
     });
 
     // preview
@@ -19,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelector('#preview').innerHTML = generateOneTicket(1);
-
 });
 
 /**

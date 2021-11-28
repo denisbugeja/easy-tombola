@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <title>Tombola Generator</title>
-    <link rel="stylesheet" href="./style.min.css">
-</head>
-<body>
-    <div id="generator">
-        <h1 class="text-center">Générateur de carnets de tickets de Tombola</h1>
-        
-        <div class="mid">
-        <div>
-            <label for="organization">Etablissement</label>
-            <input type="text" name="organization" id="organization" data-mapto="organization" required />
-        </div>
-        <div>
-            <label for="title">Titre</label>
-            <input type="text" name="title" id="title" data-mapto="title" required />
-        </div>        
-        <div>
-            <label for="price">Prix du ticket</label>
-            <input type="text" name="price" id="price" data-mapto="price" value="1€" required />
-        </div>                
-        <div>
-            <label for="winprice">Premier lot</label>
-            <input type="text" name="winprice" id="winprice" data-mapto="winprice" required />
-        </div>
-        <div>
-            <label for="winprice_subtitle">Indication</label>
-            <input type="text" name="winprice_subtitle" id="winprice_subtitle" data-mapto="winprice_subtitle" required />
-        </div>        
-        <div>
-            <label for="rule">Lieu et Date du tirage</label>
-            <input type="text" name="rule" id="rule" data-mapto="rule" required />
-        </div>
-    </div>
-    <div class="mid">
-
-        <div>
-            <label for="stack_number">Nombre de carnets</label>
-            <input type="number" name="stack_number" id="stack_number" value="10" required/>
-        </div>
-        <div>
-            <label for="tickets_per_stack">Nombre de tickets par carnet</label>
-            <input type="number" name="tickets_per_stack" id="tickets_per_stack" value="10" required/>
-        </div>
-
-
-
-    </div>
-    <div class="break"></div>
-    <div>
-        <button type="button" id="print">Générer les carnets de tickets</button>
-    </div>
-
-    </div>
-    <div id="ticketlist"></div>
-
-    <div id="screen">
-        <h2 class="text-center">Prévisualisation d'un ticket de Tombola</h2>
-        <div id="preview"></div>
-    </div>
-
-    <div id="sample">
-        <div class="ticket">
-            <div class="left">
-                <div class="number text-right">{{number}}</div>
-                <div class="label_student text-left bold">Nom & prénom de l'élève:</div>
-                <div class="student dotted-bottom"></div>
-                <div class="label_grade text-left bold">Classe:</div>
-                <div class="grade dotted-bottom"></div>                
-                <div class="organization bold">{{organisation}}</div>
+    <head>
+        <title>Tombola Generator</title>
+        <link rel="stylesheet" href="./style.min.css">
+    </head>
+    <body>
+        <div id="generator">
+            <h1 class="text-center">Générateur de carnets de tickets de Tombola</h1>
+            <div class="mid">
+                <div>
+                    <label for="organization">Etablissement</label>
+                    <input type="text" name="organization" id="organization" data-mapto="organization" required />
+                </div>
+                <div>
+                    <label for="title">Titre</label>
+                    <input type="text" name="title" id="title" data-mapto="title" required />
+                </div>
+                <div>
+                    <label for="price">Prix du ticket</label>
+                    <input type="text" name="price" id="price" data-mapto="price" value="1€" required />
+                </div>
+                <div>
+                    <label for="winprice">Premier lot</label>
+                    <input type="text" name="winprice" id="winprice" data-mapto="winprice" required />
+                </div>
+                <div>
+                    <label for="winprice_subtitle">Indication</label>
+                    <input type="text" name="winprice_subtitle" id="winprice_subtitle" data-mapto="winprice_subtitle"
+                        required />
+                </div>
+                <div>
+                    <label for="rule">Lieu et Date du tirage</label>
+                    <input type="text" name="rule" id="rule" data-mapto="rule" required />
+                </div>
             </div>
-            <div class="right">
-                <div class="number text-right">{{number}}</div>
-                <div class="title bold">{{title}}</div>
-                <div class="image"></div>
-                <div class="winprice text-center">{{winprice}}</div>
-                <div class="winprice_subtitle text-center">{{winpricesubtitle}}</div>
-                <div class="rule text-center">{{rule}}</div>
-                <div class="price">X€</div>
+            <div class="mid">
+                <div>
+                    <label for="stack_number">Nombre de carnets</label>
+                    <input type="number" name="stack_number" id="stack_number" value="10" required />
+                </div>
+                <div>
+                    <label for="tickets_per_stack">Nombre de tickets par carnet</label>
+                    <input type="number" name="tickets_per_stack" id="tickets_per_stack" value="10" required />
+                </div>
             </div>
-            <div class="clearfix"></div>
+            <div class="break"></div>
+            <div class="full italic bold">
+                IMPORTANT: Après le clic sur le bouton "Générer les carnets de tickets", sur la fenêtre d'impression, il faut configurer l'impression en A4, portrait, sans marge, et cocher la case "Imprimer les arrière-plans".<br /><br />
+                CONSEIL: Choisir une imprimante PDF pour éviter de gaspiller du papier.
+            </div>
+            <div class="full text-right">
+                <button type="button" id="print">Générer les carnets de tickets</button>
+            </div>
         </div>
-    </div>
-    <script src="./generator.js"></script>
-</body>
+        <div id="ticketlist"></div>
+        <div id="screen">
+            <h2 class="text-center">Prévisualisation d'un ticket de Tombola</h2>
+            <div id="preview"></div>
+        </div>
+        <div id="sample">
+            <div class="ticket">
+                <div class="left">
+                    <div class="number bold text-right">{{number}}</div>
+                    <div class="label_student text-left bold">Nom & prénom de l'élève:</div>
+                    <div class="student dotted-bottom"></div>
+                    <div class="label_grade text-left bold">Classe:</div>
+                    <div class="grade dotted-bottom"></div>
+                    <div class="organization bold">{{organisation}}</div>
+                </div>
+                <div class="right">
+                    <div class="number bold text-right">{{number}}</div>
+                    <div class="title bold">{{title}}</div>
+                    <div class="image"></div>
+                    <div class="winprice text-center">{{winprice}}</div>
+                    <div class="winprice_subtitle text-center">{{winpricesubtitle}}</div>
+                    <div class="rule text-center">{{rule}}</div>
+                    <div class="price">X€</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <script src="./generator.min.js"></script>
+    </body>
+</html>
