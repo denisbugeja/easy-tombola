@@ -39,11 +39,11 @@
         <div class="mid">
             <div>
                 <label for="stack_number">Nombre de carnets</label>
-                <input type="number" name="stack_number" id="stack_number" value="10" required />
+                <input type="number" name="stack_number" id="stack_number" value="10" min="1" required />
             </div>
             <div>
                 <label for="tickets_per_stack">Nombre de tickets par carnet</label>
-                <input type="number" name="tickets_per_stack" id="tickets_per_stack" value="10" required />
+                <input type="number" name="tickets_per_stack" id="tickets_per_stack" value="10" min="5" required />
             </div>
         </div>
         <div class="break"></div>
@@ -65,21 +65,21 @@
     <div id="sample">
         <div class="ticket">
             <div class="left">
-                <div class="number bold text-right">{{number}}</div>
+                <div class="number bold text-right"></div>
                 <div class="label_student text-left bold">Nom & prénom de l'élève:</div>
                 <div class="student dotted-bottom"></div>
                 <div class="label_grade text-left bold">Classe:</div>
                 <div class="grade dotted-bottom"></div>
-                <div class="organization bold">{{organisation}}</div>
+                <div class="organization bold"></div>
             </div>
             <div class="right">
-                <div class="number bold text-right">{{number}}</div>
-                <div class="title bold">{{title}}</div>
+                <div class="number bold text-right"></div>
+                <div class="title bold"></div>
                 <div class="image"></div>
-                <div class="winprice text-center">{{winprice}}</div>
-                <div class="winprice_subtitle text-center">{{winpricesubtitle}}</div>
-                <div class="rule text-center">{{rule}}</div>
-                <div class="price">X€</div>
+                <div class="winprice text-center"></div>
+                <div class="winprice_subtitle text-center"></div>
+                <div class="rule text-center"></div>
+                <div class="price"></div>
             </div>
             <div class="clearfix"></div>
         </div>
