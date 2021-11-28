@@ -6,31 +6,67 @@
 </head>
 <body>
     <div id="generator">
+        <div>
+            <label for="stack_number">Nombre de carnets</label>
+            <input type="number" name="stack_number" id="stack_number" value="10" required/>
+        </div>
+        <div>
+            <label for="tickets_per_stack">Nombre de tickets par carnet</label>
+            <input type="number" name="tickets_per_stack" id="tickets_per_stack" value="10" required/>
+        </div>
+        <div>
+            <label for="organization">Etablissement</label>
+            <input type="text" name="organization" id="organization" data-mapto="organization" required />
+        </div>
+        <div>
+            <label for="title">Titre</label>
+            <input type="text" name="title" id="title" data-mapto="title" required />
+        </div>        
+        <div>
+            <label for="price">Prix du ticket</label>
+            <input type="text" name="price" id="price" data-mapto="price" value="1€" required />
+        </div>                
+        <div>
+            <label for="winprice">Premier lot</label>
+            <input type="text" name="winprice" id="winprice" data-mapto="winprice" required />
+        </div>
+        <div>
+            <label for="winprice_subtitle">Indication</label>
+            <input type="text" name="winprice_subtitle" id="winprice_subtitle" data-mapto="winprice_subtitle" required />
+        </div>        
+        <div>
+            <label for="rule">Lieu et Date du tirage</label>
+            <input type="text" name="rule" id="rule" data-mapto="rule" required />
+        </div>
+        
+
+        <div>
+            <button type="button" id="print">Imprimer</button>
+        </div>
     </div>
     <div id="ticketlist"></div>
+    <div id="preview"></div>
     <div id="sample">
-        <!-- sample ticket beginning -->
         <div class="ticket">
             <div class="left">
                 <div class="number text-right">{{number}}</div>
-                <div class="labelStudent text-left bold">Nom & prénom de l'élève:</div>
+                <div class="label_student text-left bold">Nom & prénom de l'élève:</div>
                 <div class="student dotted-bottom"></div>
-                <div class="labelGrade text-left bold">Classe:</div>
+                <div class="label_grade text-left bold">Classe:</div>
                 <div class="grade dotted-bottom"></div>                
                 <div class="organization bold">{{organisation}}</div>
             </div>
             <div class="right">
                 <div class="number text-right">{{number}}</div>
                 <div class="title bold">{{title}}</div>
-
-                <div class="winprice">{{winprice}}</div>
-                <div class="winprice-subtitle">{{winpricesubtitle}}</div>
-                <div class="rule text-left">{{rule}}</div>
-                <div class="price">{{price}}</div>
+                <div class="image"></div>
+                <div class="winprice text-center">{{winprice}}</div>
+                <div class="winprice_subtitle text-center">{{winpricesubtitle}}</div>
+                <div class="rule text-left text-center">{{rule}}</div>
+                <div class="price">X€</div>
             </div>
             <div class="clearfix"></div>
         </div>
-        <!-- sample ticket end -->
     </div>
     <script src="./generator.js"></script>
 </body>
