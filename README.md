@@ -6,7 +6,7 @@ Ce module propose une numérotation adaptée à un découpage rapide des carnets
 
 Pour une classe de 30 élèves, nous souhaitons imprimer des carnets de 10 tickets chacun.
 Ce qui donne un total de 300 tickets, répartis sur 60 pages. ( 5 tickets par page A4 ).
-Une fois les tickets générés et exportés au format PDF ( Plus d'explications dans le module )
+Une fois les planches de tickets imprimées ( Plus d'explications dans le module )
 Il faudra :
 - prendre les pages par tas de 10
 - agrafer les carnets
