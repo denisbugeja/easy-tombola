@@ -22,7 +22,7 @@ Chaque carnet aura des numeros qui se suivent, pour cela l'algo de ce module ré
 \#255, #265, #275, #285, #295
 
 Ce n'est pas une simple numerotation de 10 en 10 que l'on aurait pu obtenir avec un publipostage.
-Ici, l'algo calcule une répartition sans doublon et propose de personnaliser facilement les textes du ticket
+Ici, l'algo calcule une répartition sans doublon et propose de personnaliser facilement les textes du ticket.
 
 ## Personnalisation
 
