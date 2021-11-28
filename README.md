@@ -12,7 +12,7 @@ Il faudra :
 - agrafer les carnets
 - découper au massicot en suivant les pointillets
 
-Chaque carnet aura des numeros qui se suivent, pour cela l'algo de ce module répartit la numérotation des tickets suivant la logique suivante:
+Chaque carnet aura des numéros qui se suivent. Pour cela, l'algo de ce module organise les tickets suivant la logique suivante:
 **Page 1: **
 \#1, #11, #21, #31, #41
 **Page 2: **
@@ -21,7 +21,7 @@ Chaque carnet aura des numeros qui se suivent, pour cela l'algo de ce module ré
 **Page 55 ( par exemple): **
 \#255, #265, #275, #285, #295
 
-Ce n'est pas une simple numerotation de 10 en 10 que l'on aurait pu obtenir avec un publipostage.
+Ce n'est pas une simple numérotation de 10 en 10 que l'on aurait pu obtenir avec un publipostage.
 Ici, l'algo calcule une répartition sans doublon et propose de personnaliser facilement les textes du ticket.
 
 ## Personnalisation
@@ -52,5 +52,5 @@ Aucune. Gratuit, free.
 
 ## Contact
 
-Contactez moi si vous le souhaitez, denis.bugeja@gmail.com
+Contactez moi si vous le souhaitez: denis.bugeja@gmail.com.
 Je ne personnaliserai pas ce module sur commande mais si vous souhaitez échanger, proposer un coup de main, poser une question, vous pouvez le faire, précisez bien le sujet ;-).
