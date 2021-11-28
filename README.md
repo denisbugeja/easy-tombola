@@ -13,12 +13,12 @@ Il faudra :
 - découper au massicot en suivant les pointillets
 
 Chaque carnet aura des numeros qui se suivent, pour cela l'algo de ce module répartit la numérotation des tickets suivant la logique suivante:
-Page 1
+**Page 1: **
 \#1, #11, #21, #31, #41
-Page 2
+**Page 2: **
 \#2, #12, #22, #32, #42
 ...
-Page 55 ( par exemple)
+**Page 55 ( par exemple): **
 \#255, #265, #275, #285, #295
 
 Ce n'est pas une simple numerotation de 10 en 10 que l'on aurait pu obtenir avec un publipostage.
