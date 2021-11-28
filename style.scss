@@ -5,10 +5,10 @@ $innerPadding: 0.75cm;
 $leftInputHeight: 0.75cm;
 
 
-
 @page {
     margin: 0;
     padding: 0;
+    size: A4;
 }
 
 * {
@@ -21,11 +21,17 @@ $leftInputHeight: 0.75cm;
     clear: both;
 }
 
+.mid{
+    float: left;
+    width: 50%;
+}
+
 body {
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.4cm;
+    font-size: 0.38cm;
+    line-height: 110%;
 
     @media print {
         padding: 0;
@@ -64,7 +70,7 @@ body {
 
 #ticketlist {
     @media screen {
-        display: block;
+        display: none;
     }
     @media print {
         display: block;
@@ -74,7 +80,12 @@ body {
     }
 }
 
-#preview,
+
+#sample {
+    display: none;
+}
+
+#screen,
 #generator {
     @media screen {
         display: block;
@@ -85,7 +96,27 @@ body {
     }
 }
 
+#screen{
+    width: 100%;
+}
+
+#generator{
+    width: $pageWidth;
+    margin: 0 auto;
+}
+
+#preview{
+    margin: 0 auto;
+    @media screen {
+        width: $pageWidth;
+        height: ($pageHeight / $ticketsPerPage);
+    }    
+}
+
 .ticket {
+    font-family: 'Purisa', Arial, Helvetica, sans-serif;
+    font-size: 0.34cm;
+
     @media print {
         width: 100vw;
         height: (100vh / $ticketsPerPage);
@@ -173,7 +204,7 @@ body {
         .title {
             position: absolute;
             top: 0.5cm;
-            right: 3.5cm;
+            right: 2.85cm;
             left: $innerPadding;
             font-size: 1.5em;
         }
@@ -189,7 +220,7 @@ body {
         }
 
         .winprice {
-            top: 3.5cm;
+            top: 3.7cm;
             font-size: 1.75em;
         }
 
@@ -218,8 +249,4 @@ body {
             page-break-after: always;
         }
     }
-}
-
-#sample {
-    display: none;
 }
