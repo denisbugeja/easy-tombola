@@ -24,7 +24,7 @@ Chaque carnet aura des numéros qui se suivent. Pour cela, l'algo de ce module o
 Ce n'est pas une simple numérotation de 10 en 10 que l'on aurait pu obtenir avec un publipostage.
 Ici, l'algo calcule une répartition sans doublon et propose de personnaliser facilement les textes du ticket.
 
-## Personnalisation
+## Détails
 
 Ce module est proposé sous une forme modifiable, à savoir:
 - 1 fichier generator.html => le générateur lui même embarquant le code javascript inline contenant l'algo de répartition
