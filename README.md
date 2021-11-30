@@ -41,6 +41,16 @@ Pour chaque modification je publie une version utilisable en l'état, dans ce ca
 
 L'utilisation du module présent dans le dossier dist est préconisé pour ceux qui ne sont pas à l'aise avec la technique, ou qui souhaitent tester l'outil rapidement.
 
+## Personnalisation
+
+Ce module est proposé dans sa version la plus simple ( un fichier encapsulant le générateur de planches, les styles, le code JS nécessaire à la génération des tickets ).
+Mais il est possible de le customiser.
+Pour cela il suffit:
+- de placer un fichier custom.min.css dans le même répertoire que le generator.html pour customiser les styles
+- de placer un fichier custom.min.js dans le même répertoire generator.html pour customiser les comportements
+
+Les customisations écrites dans ces fichiers seront prises en compte après raffraichissement de la page du module ( F5 dans le navigateur )
+
 ## Bon à savoir
 
 Ce module donne de meilleurs résultats sous Chrome que sous Firefox ( la preview est plus fidèle sous Chrome ).

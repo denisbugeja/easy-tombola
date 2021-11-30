@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <title>Tombola Generator</title>
-    <link rel="stylesheet" href="./style.min.css">
+    <link rel="stylesheet" data-inline href="./style.min.css">
+    <link rel="stylesheet" href="./custom.min.css">
 </head>
-
 <body>
     <div id="generator">
         <h1 class="text-center">Générateur de carnets de tickets de Tombola</h1>
@@ -51,7 +50,7 @@
             IMPORTANT: Après le clic sur le bouton "Générer les carnets de tickets", sur la fenêtre d'impression, il
             faut configurer l'impression en A4, portrait, sans marge, et cocher la case "Imprimer les
             arrière-plans".<br /><br />
-            CONSEIL: Choisir une imprimante PDF pour éviter de gaspiller du papier.
+            CONSEIL: Choisir une imprimante Virtuelle PDF pour éviter de gaspiller du papier.
         </div>
         <div class="full text-right">
             <button type="button" id="print">Générer les carnets de tickets</button>
@@ -86,8 +85,7 @@
     </div>
     <script>
         var ticketsPerPage = 5,
-            sample = document.querySelector('#sample').innerHTML,
-            ticketList = document.querySelector('#ticketlist');
+            sample = document.querySelector('#sample').innerHTML;
 
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -95,7 +93,7 @@
                 document.querySelector('#ticketlist').innerHTML = generateAllTickets();
                 setTimeout(function () {
                     window.print();
-                }, 2000);
+                }, 500);
             });
 
             // preview
@@ -115,7 +113,9 @@
          * @returns string
          */
         function generateAllTickets() {
-            let allPositions = getListOfValues();
+            let ticketsPerStack = parseInt(document.querySelector('#tickets_per_stack').value),
+                stackNumber = parseInt(document.querySelector('#stack_number').value),
+                allPositions = getListOfValues(ticketsPerStack, stackNumber);
             if (!allPositions) {
                 alert('Problème lors de la génération des tickets, veuillez revoir les valeurs saisies');
                 return;
@@ -159,12 +159,12 @@
         }
 
         /**
+         * @param {number} ticketsPerStack
+         * @param {number} stackNumber
          * @returns Array|false
          */
-        function getListOfValues() {
+        function getListOfValues(ticketsPerStack, stackNumber) {
             let arrGeneratedTickets = [],
-                ticketsPerStack = parseInt(document.querySelector('#tickets_per_stack').value),
-                stackNumber = parseInt(document.querySelector('#stack_number').value),
                 nbTickets = stackNumber * ticketsPerStack,
                 nbPages = nbTickets / ticketsPerPage,
                 coeff = (ticketsPerPage - 1) * ticketsPerStack;
@@ -187,6 +187,6 @@
             return arrGeneratedTickets;
         }
     </script>
+    <script src="custom.min.js"></script>
 </body>
-
 </html>
